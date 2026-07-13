@@ -13,9 +13,16 @@ __pycache__/
 .venv/
 venv/
 
-# Frontend local artifacts if added later
+# Frontend local artifacts
 frontend/node_modules/
 frontend/dist/
 frontend/build/
 frontend/.next/
 frontend/.cache/
+frontend/frontend/node_modules/
+frontend/frontend/dist/
+frontend/frontend/build/
+frontend/frontend/.next/
+
+# Backend uploads (runtime files only)
+backend/app/uploads/

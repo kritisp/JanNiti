@@ -8,9 +8,10 @@ interface AppConfig {
 }
 
 export const config: AppConfig = {
-  // If VITE_API_URL is empty or undefined, the app defaults to empty string
-  // which routes calls through Vite proxy configuration (/api) in development.
-  apiUrl: import.meta.env.VITE_API_URL || "",
+  // In development, keep the API base URL empty so all browser requests remain
+  // same-origin and are handled by the Vite proxy.
+  // In production, VITE_API_URL can be set to the deployed backend URL.
+  apiUrl: import.meta.env.DEV ? "" : import.meta.env.VITE_API_URL || "",
   isDevelopment: import.meta.env.DEV,
   isProduction: import.meta.env.PROD,
 };

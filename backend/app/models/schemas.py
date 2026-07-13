@@ -126,3 +126,11 @@ class AnalyticsResponse(BaseModel):
     """Response model for analytics endpoint."""
     issues_by_language: Dict[str, int] = Field(default_factory=dict, description="Count of issues by language")
     average_priority_score: float = Field(default=0.0, description="Average Development Priority Index")
+    issues_by_state: Dict[str, int] = Field(default_factory=dict, description="Count of issues by state")
+    issues_by_district: Dict[str, int] = Field(default_factory=dict, description="Count of issues by district")
+    issues_by_category: Dict[str, int] = Field(default_factory=dict, description="Count of issues by category")
+    priority_distribution: Dict[str, int] = Field(default_factory=dict, description="Priority distribution counts")
+    department_distribution: Dict[str, int] = Field(default_factory=dict, description="Count of issues by government department")
+    scheme_usage: Dict[str, int] = Field(default_factory=dict, description="Count of alignments to schemes")
+    workflow_success_rate: float = Field(default=100.0, description="Percentage of successful workflows")
+    constituency_snapshot: Dict[str, Any] = Field(default_factory=dict, description="Bespoke constituency snapshot indicators")
