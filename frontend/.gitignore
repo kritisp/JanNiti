@@ -1,0 +1,72 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+.venv/
+venv/
+ENV/
+env/
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# Python Cache and metadata
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+eggs/
+parts/
+bin/
+var/
+sdist/
+develop-eggs/
+downloads/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+.installed.cfg
+manifest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.pyre/
+.pytype/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Local environment configuration files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+.classpath
+.settings/
+
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
