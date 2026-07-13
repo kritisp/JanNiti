@@ -1,0 +1,24 @@
+{
+  "constituency_name": "Bhubaneswar Central",
+  "population": 450000,
+  "villages": 15,
+  "wards": 30,
+  "schools": 45,
+  "hospitals": 8,
+  "road_length_km": 320.5,
+  "road_condition": {
+    "excellent_km": 100.0,
+    "good_km": 120.0,
+    "poor_km": 100.5
+  },
+  "water_supply_coverage_pct": 88.5,
+  "electricity_coverage_pct": 98.2,
+  "representative": "Hon. Demo Member",
+  "historical_complaints_ytd": 1245,
+  "phcs": 12,
+  "infrastructure_gaps": [
+    "Old sewage lines in Ward 4",
+    "Incomplete street lighting on main arterial road",
+    "Potholes increasing during monsoon"
+  ]
+}

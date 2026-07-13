@@ -1,0 +1,26 @@
+[
+  {
+    "department_id": "PWD",
+    "name": "Public Works Department",
+    "responsibilities": ["Roads", "Bridges", "Government Buildings", "Potholes"],
+    "head": "Chief Engineer"
+  },
+  {
+    "department_id": "WSD",
+    "name": "Water Supply Department",
+    "responsibilities": ["Drinking Water", "Drainage", "Sewage", "Pipelines"],
+    "head": "Director of Water Supply"
+  },
+  {
+    "department_id": "EDU",
+    "name": "Education Department",
+    "responsibilities": ["Public Schools", "Teacher Allocation", "School Infrastructure"],
+    "head": "District Education Officer"
+  },
+  {
+    "department_id": "HLT",
+    "name": "Health Department",
+    "responsibilities": ["Hospitals", "Clinics", "Sanitation", "Medical Supplies"],
+    "head": "Chief Medical Officer"
+  }
+]

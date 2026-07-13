@@ -1,0 +1,26 @@
+{
+  "fiscal_year": "2026-2027",
+  "total_budget_usd": 5000000,
+  "allocations": {
+    "PWD": {
+      "allocated_usd": 2000000,
+      "spent_usd": 500000,
+      "typical_project_range_usd": [5000, 100000]
+    },
+    "WSD": {
+      "allocated_usd": 1500000,
+      "spent_usd": 200000,
+      "typical_project_range_usd": [2000, 50000]
+    },
+    "EDU": {
+      "allocated_usd": 1000000,
+      "spent_usd": 300000,
+      "typical_project_range_usd": [1000, 25000]
+    },
+    "HLT": {
+      "allocated_usd": 500000,
+      "spent_usd": 150000,
+      "typical_project_range_usd": [10000, 75000]
+    }
+  }
+}

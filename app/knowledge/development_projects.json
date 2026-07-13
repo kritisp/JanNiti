@@ -1,0 +1,26 @@
+[
+  {
+    "project_id": "PRJ-001",
+    "name": "Smart City Road Expansion",
+    "department_id": "PWD",
+    "status": "In Progress",
+    "budget_allocated_usd": 1500000,
+    "expected_completion": "2026-12-31"
+  },
+  {
+    "project_id": "PRJ-002",
+    "name": "Rural Clean Water Initiative",
+    "department_id": "WSD",
+    "status": "Planning",
+    "budget_allocated_usd": 750000,
+    "expected_completion": "2027-06-30"
+  },
+  {
+    "project_id": "PRJ-003",
+    "name": "Ward 4 Pothole Patching Program",
+    "department_id": "PWD",
+    "status": "Approved",
+    "budget_allocated_usd": 50000,
+    "expected_completion": "2026-08-15"
+  }
+]

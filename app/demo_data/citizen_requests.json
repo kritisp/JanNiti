@@ -1,0 +1,72 @@
+[
+  {
+    "id": "REQ001",
+    "text": "The main road near Government High School is full of potholes. Students and ambulances face difficulty during the rainy season.",
+    "language": "English",
+    "location": "Ward 18, Bhubaneswar",
+    "category": "Road Infrastructure"
+  },
+  {
+    "id": "REQ002",
+    "text": "Our Primary Health Centre has only one doctor for five villages. Patients wait for hours and emergency cases suffer.",
+    "language": "English",
+    "location": "Jatni",
+    "category": "Healthcare"
+  },
+  {
+    "id": "REQ003",
+    "text": "The government school has leaking roofs and broken toilets. Children cannot attend classes during heavy rain.",
+    "language": "English",
+    "location": "Khordha",
+    "category": "Education"
+  },
+  {
+    "id": "REQ004",
+    "text": "There is no regular drinking water supply in our village. Families depend on tankers every summer.",
+    "language": "English",
+    "location": "Balianta",
+    "category": "Water Supply"
+  },
+  {
+    "id": "REQ005",
+    "text": "Power cuts happen every evening for three to four hours, affecting students and small businesses.",
+    "language": "English",
+    "location": "Cuttack Road",
+    "category": "Electricity"
+  },
+  {
+    "id": "REQ006",
+    "text": "Overflowing drains and uncollected garbage are causing mosquito breeding and health issues.",
+    "language": "English",
+    "location": "Ward 10",
+    "category": "Sanitation"
+  },
+  {
+    "id": "REQ007",
+    "text": "Farmers are facing severe water shortages for irrigation, resulting in crop losses this season.",
+    "language": "English",
+    "location": "Pipili",
+    "category": "Agriculture"
+  },
+  {
+    "id": "REQ008",
+    "text": "Street lights are not working near the market area. Women feel unsafe while returning home after sunset.",
+    "language": "English",
+    "location": "Patia",
+    "category": "Women's Safety"
+  },
+  {
+    "id": "REQ009",
+    "text": "The only bus to our village runs twice a day. Students and workers struggle to reach the city on time.",
+    "language": "English",
+    "location": "Barang",
+    "category": "Public Transport"
+  },
+  {
+    "id": "REQ010",
+    "text": "Our panchayat office has poor internet connectivity, making access to online government services difficult.",
+    "language": "English",
+    "location": "Nandankanan",
+    "category": "Digital Infrastructure"
+  }
+]
