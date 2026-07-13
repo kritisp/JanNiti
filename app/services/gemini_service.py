@@ -31,7 +31,7 @@ class GeminiService:
         genai.configure(api_key=api_key)
         
         # Default model for general text tasks
-        self.model = genai.GenerativeModel('gemini-1.5-pro-latest')
+        self.model = genai.GenerativeModel('gemini-2.5-flash')
 
     @retry(
         stop=stop_after_attempt(3),
@@ -49,7 +49,7 @@ class GeminiService:
             # but for this generic method we'll pass it if needed by creating a specific model instance.
             model = self.model
             if system_instruction:
-                model = genai.GenerativeModel('gemini-1.5-pro-latest', system_instruction=system_instruction)
+                model = genai.GenerativeModel('gemini-2.5-flash', system_instruction=system_instruction)
             
             response = await model.generate_content_async(prompt)
             return response.text
@@ -69,9 +69,9 @@ class GeminiService:
         """
         logger.info("Calling Gemini API: generate_json")
         try:
-            model = genai.GenerativeModel('gemini-1.5-pro-latest')
+            model = genai.GenerativeModel('gemini-2.5-flash')
             if system_instruction:
-                model = genai.GenerativeModel('gemini-1.5-pro-latest', system_instruction=system_instruction)
+                model = genai.GenerativeModel('gemini-2.5-flash', system_instruction=system_instruction)
             
             # Requesting JSON response format
             response = await model.generate_content_async(

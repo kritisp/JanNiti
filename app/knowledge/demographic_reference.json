@@ -1,0 +1,27 @@
+{
+  "population_distribution": {
+    "Odisha": {
+      "urban": 16.69,
+      "rural": 83.31
+    },
+    "West Bengal": {
+      "urban": 31.87,
+      "rural": 68.13
+    }
+  },
+  "age_groups": {
+    "0-14": 26.5,
+    "15-35": 34.2,
+    "36-60": 30.1,
+    "60+": 9.2
+  },
+  "literacy_rate": {
+    "Odisha": 72.9,
+    "West Bengal": 76.26
+  },
+  "occupation_distribution": {
+    "Agriculture": 45.0,
+    "Industry": 20.0,
+    "Services": 35.0
+  }
+}

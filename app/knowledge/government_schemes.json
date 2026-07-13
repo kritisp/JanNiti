@@ -1,0 +1,72 @@
+[
+  {
+    "scheme_name": "Pradhan Mantri Gram Sadak Yojana (PMGSY)",
+    "category": "Road Infrastructure",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Jal Jeevan Mission",
+    "category": "Water Supply",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "AMRUT",
+    "category": "Water Supply",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Ayushman Bharat",
+    "category": "Healthcare",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "National Health Mission",
+    "category": "Healthcare",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Samagra Shiksha",
+    "category": "Education",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "PM-KISAN",
+    "category": "Agriculture",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "KALIA Scheme",
+    "category": "Agriculture",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Mission Shakti",
+    "category": "Women's Safety",
+    "level": "State"
+  },
+  {
+    "scheme_name": "Digital India",
+    "category": "Digital Infrastructure",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Deen Dayal Upadhyaya Gram Jyoti Yojana",
+    "category": "Electricity",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Swachh Bharat Mission",
+    "category": "Drainage & Sanitation",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Swachh Bharat Mission (Urban)",
+    "category": "Waste Management",
+    "level": "Central"
+  },
+  {
+    "scheme_name": "Smart Cities Mission",
+    "category": "Civic Amenities",
+    "level": "Central"
+  }
+]

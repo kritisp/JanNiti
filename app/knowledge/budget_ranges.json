@@ -1,0 +1,44 @@
+[
+  {
+    "project": "Road Resurfacing (1km)",
+    "category": "Road Infrastructure",
+    "min_budget_inr": 1500000,
+    "max_budget_inr": 3000000
+  },
+  {
+    "project": "PHC Medicine Restocking",
+    "category": "Healthcare",
+    "min_budget_inr": 200000,
+    "max_budget_inr": 500000
+  },
+  {
+    "project": "New Transformer Installation",
+    "category": "Electricity",
+    "min_budget_inr": 400000,
+    "max_budget_inr": 800000
+  },
+  {
+    "project": "Borewell & Water Tank Installation",
+    "category": "Water Supply",
+    "min_budget_inr": 300000,
+    "max_budget_inr": 600000
+  },
+  {
+    "project": "Smart Classroom Setup",
+    "category": "Education",
+    "min_budget_inr": 100000,
+    "max_budget_inr": 250000
+  },
+  {
+    "project": "Solar Street Lighting (50 units)",
+    "category": "Street Lighting",
+    "min_budget_inr": 500000,
+    "max_budget_inr": 1000000
+  },
+  {
+    "project": "Underground Drainage (1km)",
+    "category": "Drainage & Sanitation",
+    "min_budget_inr": 2000000,
+    "max_budget_inr": 5000000
+  }
+]

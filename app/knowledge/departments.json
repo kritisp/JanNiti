@@ -1,26 +1,77 @@
 [
   {
-    "department_id": "PWD",
-    "name": "Public Works Department",
-    "responsibilities": ["Roads", "Bridges", "Government Buildings", "Potholes"],
-    "head": "Chief Engineer"
+    "category": "Road Infrastructure",
+    "department": "Public Works Department",
+    "department_id": "DEPT_PWD"
   },
   {
-    "department_id": "WSD",
-    "name": "Water Supply Department",
-    "responsibilities": ["Drinking Water", "Drainage", "Sewage", "Pipelines"],
-    "head": "Director of Water Supply"
+    "category": "Water Supply",
+    "department": "Water Resources Department",
+    "department_id": "DEPT_WRD"
   },
   {
-    "department_id": "EDU",
-    "name": "Education Department",
-    "responsibilities": ["Public Schools", "Teacher Allocation", "School Infrastructure"],
-    "head": "District Education Officer"
+    "category": "Healthcare",
+    "department": "Health & Family Welfare Department",
+    "department_id": "DEPT_HFW"
   },
   {
-    "department_id": "HLT",
-    "name": "Health Department",
-    "responsibilities": ["Hospitals", "Clinics", "Sanitation", "Medical Supplies"],
-    "head": "Chief Medical Officer"
+    "category": "Education",
+    "department": "School & Mass Education Department",
+    "department_id": "DEPT_SME"
+  },
+  {
+    "category": "Electricity",
+    "department": "Energy Department",
+    "department_id": "DEPT_ENERGY"
+  },
+  {
+    "category": "Women's Safety",
+    "department": "Home Department",
+    "department_id": "DEPT_HOME"
+  },
+  {
+    "category": "Agriculture",
+    "department": "Agriculture & Farmers' Empowerment Department",
+    "department_id": "DEPT_AGRI"
+  },
+  {
+    "category": "Public Transport",
+    "department": "Transport Department",
+    "department_id": "DEPT_TRANS"
+  },
+  {
+    "category": "Drainage & Sanitation",
+    "department": "Housing & Urban Development Department",
+    "department_id": "DEPT_HUD"
+  },
+  {
+    "category": "Waste Management",
+    "department": "Housing & Urban Development Department",
+    "department_id": "DEPT_HUD"
+  },
+  {
+    "category": "Digital Infrastructure",
+    "department": "Electronics & Information Technology Department",
+    "department_id": "DEPT_EIT"
+  },
+  {
+    "category": "Flood & Disaster Management",
+    "department": "Disaster Management Authority",
+    "department_id": "DEPT_DMA"
+  },
+  {
+    "category": "Street Lighting",
+    "department": "Housing & Urban Development Department",
+    "department_id": "DEPT_HUD"
+  },
+  {
+    "category": "Environmental Issues",
+    "department": "Forest & Environment Department",
+    "department_id": "DEPT_ENV"
+  },
+  {
+    "category": "Civic Amenities",
+    "department": "Municipal Administration",
+    "department_id": "DEPT_MUNI"
   }
 ]

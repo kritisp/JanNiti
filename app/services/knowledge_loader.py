@@ -7,11 +7,10 @@ logger = logging.getLogger(__name__)
 
 class KnowledgeLoader:
     """
-    Utility class for loading, caching, and querying constituency knowledge base JSON files.
+    Utility class for loading, caching, and querying knowledge base JSON files.
     """
     _cache: Dict[str, Any] = {}
     
-    # Resolving path relative to this file's location: app/services/knowledge_loader.py -> app/knowledge
     _base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'knowledge'))
 
     @classmethod
@@ -34,46 +33,40 @@ class KnowledgeLoader:
         return data
 
     @classmethod
-    def get_constituency_data(cls) -> Dict[str, Any]:
-        """Returns the general constituency data."""
-        return cls._load_json("constituency.json")
-
-    @classmethod
     def get_departments(cls) -> List[Dict[str, Any]]:
-        """Returns all government departments."""
         return cls._load_json("departments.json")
 
     @classmethod
-    def get_department_by_id(cls, dept_id: str) -> Optional[Dict[str, Any]]:
-        """Finds a specific department by its ID."""
-        departments = cls.get_departments()
-        for dept in departments:
-            if dept.get("department_id") == dept_id:
-                return dept
-        return None
+    def get_government_schemes(cls) -> List[Dict[str, Any]]:
+        return cls._load_json("government_schemes.json")
 
     @classmethod
-    def get_development_projects(cls) -> List[Dict[str, Any]]:
-        """Returns all development projects."""
-        return cls._load_json("development_projects.json")
+    def get_issue_categories(cls) -> List[Dict[str, Any]]:
+        return cls._load_json("issue_categories.json")
 
     @classmethod
-    def get_projects_by_department(cls, dept_id: str) -> List[Dict[str, Any]]:
-        """Returns development projects belonging to a specific department."""
-        projects = cls.get_development_projects()
-        return [p for p in projects if p.get("department_id") == dept_id]
+    def get_priority_rules(cls) -> List[Dict[str, Any]]:
+        return cls._load_json("priority_rules.json")
 
     @classmethod
-    def get_budgets(cls) -> Dict[str, Any]:
-        """Returns the full budget data."""
-        return cls._load_json("budgets.json")
-        
+    def get_budget_ranges(cls) -> List[Dict[str, Any]]:
+        return cls._load_json("budget_ranges.json")
+
     @classmethod
-    def get_department_budget(cls, dept_id: str) -> Optional[Dict[str, Any]]:
-        """Returns the budget allocation for a specific department."""
-        budgets = cls.get_budgets()
-        allocations = budgets.get("allocations", {})
-        return allocations.get(dept_id)
+    def get_constituency_profiles(cls) -> List[Dict[str, Any]]:
+        return cls._load_json("constituency_profiles.json")
+
+    @classmethod
+    def get_demographic_reference(cls) -> Dict[str, Any]:
+        return cls._load_json("demographic_reference.json")
+
+    @classmethod
+    def get_infrastructure_reference(cls) -> Dict[str, Any]:
+        return cls._load_json("infrastructure_reference.json")
+
+    @classmethod
+    def get_sdg_mapping(cls) -> List[Dict[str, Any]]:
+        return cls._load_json("sdg_mapping.json")
 
     @classmethod
     def clear_cache(cls):

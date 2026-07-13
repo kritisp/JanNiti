@@ -12,9 +12,9 @@ class CitizenRequest(BaseModel):
 class CitizenIntelligence(BaseModel):
     request_id: str
     original_text: str
-    clean_text: str
     translated_text: str
-    language: str
+    detected_language: str = ""
+    language_code: str = ""
     location: str
     timestamp: str
     attachments: List[str] = Field(default_factory=list)
@@ -65,13 +65,20 @@ class DevelopmentStrategy(BaseModel):
     risks: List[str] = Field(default_factory=list)
     dependencies: List[str] = Field(default_factory=list)
     government_scheme_alignment: str
-    sdg_alignment: str
     success_metrics: List[str] = Field(default_factory=list)
 
 class PolicyBriefing(BaseModel):
     markdown_content: str
     html_content: str
     pdf_ready_content: str
+    english_report: str = ""
+    hindi_report: str = ""
+    odia_report: str = ""
+    bengali_report: str = ""
+    english_audio: str = ""
+    hindi_audio: str = ""
+    odia_audio: str = ""
+    bengali_audio: str = ""
 
 class AgentState(BaseModel):
     """
@@ -92,3 +99,30 @@ class AgentState(BaseModel):
     current_agent: Optional[str] = None
     workflow_status: str = Field(default="pending")
     errors: List[str] = Field(default_factory=list)
+
+# --- API Response Models ---
+
+class SubmitResponse(BaseModel):
+    """Response model for submitting a workflow."""
+    request_id: str = Field(..., description="Unique UUID for the citizen request")
+    status: str = Field(..., description="Status of the background task (e.g., in_progress)")
+    message: str = Field(..., description="Confirmation message")
+
+class WorkflowStatusResponse(BaseModel):
+    """Response model for checking workflow status."""
+    request_id: str = Field(..., description="Unique UUID of the request")
+    status: str = Field(..., description="Current status: in_progress, completed, failed")
+    error: Optional[str] = Field(default=None, description="Error message if failed")
+    workflow_data: Optional[AgentState] = Field(default=None, description="The full AgentState if completed")
+
+class DashboardStatsResponse(BaseModel):
+    """Response model for dashboard statistics."""
+    total_requests: int = Field(..., description="Total requests processed or in queue")
+    completed: int = Field(..., description="Successfully completed workflows")
+    failed: int = Field(..., description="Workflows that failed due to errors")
+    in_progress: int = Field(..., description="Workflows currently executing")
+
+class AnalyticsResponse(BaseModel):
+    """Response model for analytics endpoint."""
+    issues_by_language: Dict[str, int] = Field(default_factory=dict, description="Count of issues by language")
+    average_priority_score: float = Field(default=0.0, description="Average Development Priority Index")

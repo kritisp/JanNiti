@@ -1,0 +1,56 @@
+[
+  {
+    "category": "Road Infrastructure",
+    "subcategory": "Potholes & Damage",
+    "priority": "High",
+    "responsible_department": "Public Works Department"
+  },
+  {
+    "category": "Healthcare",
+    "subcategory": "Medicine Shortage",
+    "priority": "Critical",
+    "responsible_department": "Health & Family Welfare Department"
+  },
+  {
+    "category": "Education",
+    "subcategory": "Teacher Shortage",
+    "priority": "Medium",
+    "responsible_department": "School & Mass Education Department"
+  },
+  {
+    "category": "Water Supply",
+    "subcategory": "Drinking Water Crisis",
+    "priority": "Critical",
+    "responsible_department": "Water Resources Department"
+  },
+  {
+    "category": "Electricity",
+    "subcategory": "Frequent Power Cuts",
+    "priority": "High",
+    "responsible_department": "Energy Department"
+  },
+  {
+    "category": "Agriculture",
+    "subcategory": "Crop Damage",
+    "priority": "High",
+    "responsible_department": "Agriculture & Farmers' Empowerment Department"
+  },
+  {
+    "category": "Women's Safety",
+    "subcategory": "Lack of Streetlights",
+    "priority": "High",
+    "responsible_department": "Home Department"
+  },
+  {
+    "category": "Drainage & Sanitation",
+    "subcategory": "Clogged Drains",
+    "priority": "Medium",
+    "responsible_department": "Housing & Urban Development Department"
+  },
+  {
+    "category": "Flood & Disaster Management",
+    "subcategory": "Waterlogging",
+    "priority": "Critical",
+    "responsible_department": "Disaster Management Authority"
+  }
+]

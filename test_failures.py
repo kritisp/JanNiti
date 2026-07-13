@@ -8,34 +8,24 @@ import logging
 logging.getLogger("app.agents").setLevel(logging.CRITICAL)
 logging.getLogger("app.orchestrator").setLevel(logging.CRITICAL)
 
-import app.orchestrator.app
-app.orchestrator.app.workflow_app.wait_for_event = lambda event_name: asyncio.sleep(0.1)
-
-def dummy_task(func):
-    return func
-app.orchestrator.app.workflow_app.task = dummy_task
-
-from app.orchestrator.workflow import janniti_ai_workflow
-from app.agents.citizen_intake import citizen_intake_task
-from app.agents.issue_intelligence import issue_intelligence_task
-from app.agents.constituency_context import constituency_context_task
-from app.agents.priority_decision import priority_decision_task
-from app.agents.development_planning import development_planning_task
-from app.agents.executive_briefing import executive_briefing_task
+from app.orchestrator.workflow import WorkflowOrchestrator
 import app.agents.citizen_intake
+import app.agents.issue_intelligence
 
 class MockGeminiService:
     async def generate_json(self, prompt: str, system_instruction: str = None) -> dict:
         return {"clean_text": "Mock", "language": "English", "translated_text": "Mock", "location": "Ward 18"}
         
 app.agents.citizen_intake.GeminiService = MockGeminiService
+app.agents.issue_intelligence.GeminiService = MockGeminiService
 
 async def run_failure_simulation(name, payload, setup_mock=None):
     print(f"\n--- Running Simulation: {name} ---")
     if setup_mock:
         setup_mock()
         
-    final_state = await janniti_ai_workflow(payload)
+    orchestrator = WorkflowOrchestrator()
+    final_state = await orchestrator.execute(payload)
     print("Workflow Status:", final_state.get('workflow_status'))
     print("Errors:", final_state.get('errors'))
     print("Execution History:", final_state.get('execution_history'))

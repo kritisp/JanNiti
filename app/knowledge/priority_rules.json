@@ -1,0 +1,30 @@
+[
+  {
+    "issue_keyword": "Road damage",
+    "base_score": 50,
+    "modifiers": {
+      "School nearby": 20,
+      "Hospital nearby": 25,
+      "Flood prone": 15,
+      "Emergency route": 30
+    }
+  },
+  {
+    "issue_keyword": "Water shortage",
+    "base_score": 70,
+    "modifiers": {
+      "Summer season": 20,
+      "Drought prone": 30,
+      "No alternative source": 20
+    }
+  },
+  {
+    "issue_keyword": "Power cut",
+    "base_score": 40,
+    "modifiers": {
+      "Exam season": 20,
+      "Hospital nearby": 40,
+      "Industrial area": 20
+    }
+  }
+]

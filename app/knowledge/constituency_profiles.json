@@ -1,0 +1,42 @@
+[
+  {
+    "state": "Odisha",
+    "district": "Khordha",
+    "population": 2250000,
+    "urban_rural_ratio": "48:52",
+    "schools": 1250,
+    "hospitals": 85,
+    "road_network_km": 4200,
+    "water_coverage_pct": 78
+  },
+  {
+    "state": "Odisha",
+    "district": "Ganjam",
+    "population": 3520000,
+    "urban_rural_ratio": "22:78",
+    "schools": 2800,
+    "hospitals": 120,
+    "road_network_km": 6800,
+    "water_coverage_pct": 65
+  },
+  {
+    "state": "West Bengal",
+    "district": "Kolkata",
+    "population": 4496000,
+    "urban_rural_ratio": "100:0",
+    "schools": 3100,
+    "hospitals": 350,
+    "road_network_km": 1500,
+    "water_coverage_pct": 95
+  },
+  {
+    "state": "West Bengal",
+    "district": "South 24 Parganas",
+    "population": 8161000,
+    "urban_rural_ratio": "25:75",
+    "schools": 4200,
+    "hospitals": 180,
+    "road_network_km": 8900,
+    "water_coverage_pct": 60
+  }
+]

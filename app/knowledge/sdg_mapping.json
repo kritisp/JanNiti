@@ -1,0 +1,50 @@
+[
+  {
+    "category": "Road Infrastructure",
+    "sdg": "Goal 9: Industry, Innovation and Infrastructure"
+  },
+  {
+    "category": "Healthcare",
+    "sdg": "Goal 3: Good Health and Well-being"
+  },
+  {
+    "category": "Education",
+    "sdg": "Goal 4: Quality Education"
+  },
+  {
+    "category": "Water Supply",
+    "sdg": "Goal 6: Clean Water and Sanitation"
+  },
+  {
+    "category": "Drainage & Sanitation",
+    "sdg": "Goal 6: Clean Water and Sanitation"
+  },
+  {
+    "category": "Waste Management",
+    "sdg": "Goal 11: Sustainable Cities and Communities"
+  },
+  {
+    "category": "Electricity",
+    "sdg": "Goal 7: Affordable and Clean Energy"
+  },
+  {
+    "category": "Women's Safety",
+    "sdg": "Goal 5: Gender Equality"
+  },
+  {
+    "category": "Agriculture",
+    "sdg": "Goal 2: Zero Hunger"
+  },
+  {
+    "category": "Public Transport",
+    "sdg": "Goal 11: Sustainable Cities and Communities"
+  },
+  {
+    "category": "Digital Infrastructure",
+    "sdg": "Goal 9: Industry, Innovation and Infrastructure"
+  },
+  {
+    "category": "Flood & Disaster Management",
+    "sdg": "Goal 13: Climate Action"
+  }
+]

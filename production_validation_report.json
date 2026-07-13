@@ -1,0 +1,308 @@
+{
+    "total": 50,
+    "success_rate": 100.0,
+    "failed_requests": 0,
+    "avg_execution_time": 4.5700057888031,
+    "results": [
+        {
+            "id": "REQ-202607-FC236A",
+            "status": "success",
+            "execution_time": 5.130404949188232,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-37D559",
+            "status": "success",
+            "execution_time": 6.08939266204834,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-893056",
+            "status": "success",
+            "execution_time": 5.036668300628662,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-AD9FD5",
+            "status": "success",
+            "execution_time": 6.318356990814209,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-056336",
+            "status": "success",
+            "execution_time": 5.48225474357605,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-03380E",
+            "status": "success",
+            "execution_time": 5.852849006652832,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-C17B1B",
+            "status": "success",
+            "execution_time": 6.3570497035980225,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-38C5C5",
+            "status": "success",
+            "execution_time": 3.3680973052978516,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-DC7027",
+            "status": "success",
+            "execution_time": 4.634366035461426,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-F35EB2",
+            "status": "success",
+            "execution_time": 3.546644449234009,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-CEF5E1",
+            "status": "success",
+            "execution_time": 6.55730938911438,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-C84CEB",
+            "status": "success",
+            "execution_time": 4.242637872695923,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-DAEC11",
+            "status": "success",
+            "execution_time": 4.298178434371948,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-38AB90",
+            "status": "success",
+            "execution_time": 5.485210180282593,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-2E080B",
+            "status": "success",
+            "execution_time": 5.604733467102051,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-518600",
+            "status": "success",
+            "execution_time": 5.578335762023926,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-51CECF",
+            "status": "success",
+            "execution_time": 5.2149739265441895,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-B9FC49",
+            "status": "success",
+            "execution_time": 3.529308319091797,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-335224",
+            "status": "success",
+            "execution_time": 4.803045988082886,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-90E14E",
+            "status": "success",
+            "execution_time": 5.471905708312988,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-D1C529",
+            "status": "success",
+            "execution_time": 5.5395143032073975,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-85BF99",
+            "status": "success",
+            "execution_time": 3.8396732807159424,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-99372B",
+            "status": "success",
+            "execution_time": 3.7079074382781982,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-AF5DCA",
+            "status": "success",
+            "execution_time": 4.476103782653809,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-7BEC17",
+            "status": "success",
+            "execution_time": 3.5448782444000244,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-E78489",
+            "status": "success",
+            "execution_time": 3.468245267868042,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-7FB152",
+            "status": "success",
+            "execution_time": 5.278359889984131,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-673784",
+            "status": "success",
+            "execution_time": 4.966449737548828,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-D5BCE2",
+            "status": "success",
+            "execution_time": 5.247844696044922,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-44D096",
+            "status": "success",
+            "execution_time": 3.3247227668762207,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-4A2752",
+            "status": "success",
+            "execution_time": 5.746865272521973,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-FA065F",
+            "status": "success",
+            "execution_time": 5.005083084106445,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-099EE2",
+            "status": "success",
+            "execution_time": 6.405306577682495,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-783805",
+            "status": "success",
+            "execution_time": 4.2782793045043945,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-94A4B1",
+            "status": "success",
+            "execution_time": 5.314553737640381,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-96CF51",
+            "status": "success",
+            "execution_time": 5.5276970863342285,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-071935",
+            "status": "success",
+            "execution_time": 5.03699254989624,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-A5A9C2",
+            "status": "success",
+            "execution_time": 4.177753448486328,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-83631D",
+            "status": "success",
+            "execution_time": 4.425271034240723,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-0A9D5C",
+            "status": "success",
+            "execution_time": 4.499944448471069,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-F06B6B",
+            "status": "success",
+            "execution_time": 3.3552680015563965,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-29F513",
+            "status": "success",
+            "execution_time": 3.515862226486206,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-FB0BAA",
+            "status": "success",
+            "execution_time": 3.560347557067871,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-3E7D63",
+            "status": "success",
+            "execution_time": 3.7320022583007812,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-BDC8CE",
+            "status": "success",
+            "execution_time": 3.0387895107269287,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-606CF6",
+            "status": "success",
+            "execution_time": 3.2334694862365723,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-BC5FFF",
+            "status": "success",
+            "execution_time": 2.972799062728882,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-5E50A4",
+            "status": "success",
+            "execution_time": 3.2108333110809326,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-5998DD",
+            "status": "success",
+            "execution_time": 2.6239869594573975,
+            "errors": []
+        },
+        {
+            "id": "REQ-202607-FF2014",
+            "status": "success",
+            "execution_time": 2.843761920928955,
+            "errors": []
+        }
+    ]
+}

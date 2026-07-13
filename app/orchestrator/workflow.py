@@ -1,88 +1,64 @@
-import asyncio
 import logging
 from app.models.schemas import AgentState, CitizenRequest
-from app.orchestrator.app import workflow_app
 
-from app.agents.citizen_intake import citizen_intake_task
-from app.agents.issue_intelligence import issue_intelligence_task
-from app.agents.constituency_context import constituency_context_task
-from app.agents.priority_decision import priority_decision_task
-from app.agents.development_planning import development_planning_task
-from app.agents.executive_briefing import executive_briefing_task
+from app.agents.citizen_intake import CitizenIntakeAgent
+from app.agents.issue_intelligence import IssueIntelligenceAgent
+from app.agents.constituency_context import ConstituencyContextAgent
+from app.agents.priority_decision import PriorityDecisionAgent
+from app.agents.development_planning import DevelopmentPlanningAgent
+from app.agents.executive_briefing import ExecutiveBriefingAgent
 
 logger = logging.getLogger(__name__)
 
-@workflow_app.task
-async def janniti_ai_workflow(request_dict: dict) -> dict:
-    """
-    Executes the 6-agent AI sequence using a native Render Workflows DAG with Fan-Out.
-    Gracefully handles failures and preserves execution history.
-    """
-    logger.info("Starting Render Workflow DAG for JanNiti AI...")
-    
-    execution_history = []
-    errors = []
-    workflow_status = "in_progress"
-    
-    # Initialize basic state variables in case of early failure
-    request = CitizenRequest(**request_dict)
-    intake_task = issue_task = context_task = priority_task = strategy_task = briefing_task = None
+class WorkflowOrchestrator:
+    async def execute(self, request_dict: dict) -> dict:
+        """
+        Executes the 6-agent AI sequence strictly sequentially.
+        Gracefully handles failures and preserves execution history.
+        """
+        logger.info("Starting Workflow DAG for JanNiti AI...")
+        
+        request = CitizenRequest(**request_dict)
+        state = AgentState(citizen_request=request)
+        
+        try:
+            # 1. Citizen Intelligence
+            state.execution_history.append({"event": "CitizenIntakeAgent: started"})
+            state.citizen_intelligence = await CitizenIntakeAgent().execute(state.model_dump())
+            state.execution_history.append({"event": "CitizenIntakeAgent: completed"})
+            
+            # 2. Issue Intelligence
+            state.execution_history.append({"event": "IssueIntelligenceAgent: started"})
+            state.issue_understanding = await IssueIntelligenceAgent().execute(state.model_dump())
+            state.execution_history.append({"event": "IssueIntelligenceAgent: completed"})
 
-    try:
-        # 1. Citizen Intelligence
-        execution_history.append({"event": "citizen_intake_task: started"})
-        intake_task = await citizen_intake_task(request.model_dump())
-        execution_history.append({"event": "citizen_intake_task: completed"})
-        
-        # 2. Fan-Out Pattern
-        execution_history.append({"event": "fan_out (issue_intelligence, constituency_context): started"})
-        issue_task, context_task = await asyncio.gather(
-            issue_intelligence_task(intake_task),
-            constituency_context_task()
-        )
-        execution_history.append({"event": "fan_out: completed"})
-        
-        # 3. Fan-In Pattern
-        execution_history.append({"event": "priority_decision_task: started"})
-        priority_task = await priority_decision_task(issue_task, context_task)
-        execution_history.append({"event": "priority_decision_task: completed"})
-        
-        # 4. Planning Phase
-        execution_history.append({"event": "development_planning_task: started"})
-        strategy_task = await development_planning_task(issue_task, context_task, priority_task)
-        execution_history.append({"event": "development_planning_task: completed"})
-        
-        # 5. (Removed Unsupported Pause Execution)
-        # The official SDK does not support `wait_for_event` natively mid-task.
-        # Proceeding directly to finalization.
-        # 6. Finalization
-        execution_history.append({"event": "executive_briefing_task: started"})
-        briefing_task = await executive_briefing_task(
-            intake_task, issue_task, context_task, priority_task, strategy_task
-        )
-        execution_history.append({"event": "executive_briefing_task: completed"})
-        
-        workflow_status = "completed"
-        logger.info("Render Workflow DAG completed successfully.")
-        
-    except Exception as e:
-        logger.error(f"Workflow failed: {str(e)}")
-        errors.append(str(e))
-        workflow_status = "failed"
-        execution_history.append({"event": f"failed_at_exception: {type(e).__name__}"})
-        
-    # Reassemble the final AgentState
-    final_state = AgentState(
-        citizen_request=request,
-        citizen_intelligence=intake_task,
-        issue_understanding=issue_task,
-        constituency_intelligence=context_task,
-        decision_intelligence=priority_task,
-        development_strategy=strategy_task,
-        policy_briefing=briefing_task,
-        workflow_status=workflow_status,
-        errors=errors,
-        execution_history=execution_history
-    )
-    
-    return final_state.model_dump()
+            # 3. Constituency Context
+            state.execution_history.append({"event": "ConstituencyContextAgent: started"})
+            state.constituency_intelligence = await ConstituencyContextAgent().execute(state.model_dump())
+            state.execution_history.append({"event": "ConstituencyContextAgent: completed"})
+            
+            # 4. Priority Decision
+            state.execution_history.append({"event": "PriorityDecisionAgent: started"})
+            state.decision_intelligence = await PriorityDecisionAgent().execute(state.model_dump())
+            state.execution_history.append({"event": "PriorityDecisionAgent: completed"})
+            
+            # 5. Planning Phase
+            state.execution_history.append({"event": "DevelopmentPlanningAgent: started"})
+            state.development_strategy = await DevelopmentPlanningAgent().execute(state.model_dump())
+            state.execution_history.append({"event": "DevelopmentPlanningAgent: completed"})
+            
+            # 6. Finalization
+            state.execution_history.append({"event": "ExecutiveBriefingAgent: started"})
+            state.policy_briefing = await ExecutiveBriefingAgent().execute(state.model_dump())
+            state.execution_history.append({"event": "ExecutiveBriefingAgent: completed"})
+            
+            state.workflow_status = "completed"
+            logger.info("Workflow DAG completed successfully.")
+            
+        except Exception as e:
+            logger.error(f"Workflow failed: {str(e)}")
+            state.errors.append(str(e))
+            state.workflow_status = "failed"
+            state.execution_history.append({"event": f"failed_at_exception: {type(e).__name__}"})
+            
+        return state.model_dump()

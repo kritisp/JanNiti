@@ -1,37 +1,53 @@
 import logging
 from app.services.knowledge_loader import KnowledgeLoader
-from app.orchestrator.app import workflow_app
 
 logger = logging.getLogger(__name__)
 
-@workflow_app.task
-async def constituency_context_task() -> dict:
-    """Constituency Intelligence Agent Task"""
-    logger.info("[Constituency Intelligence Agent] Gathering constituency intelligence...")
-    
-    c_data = KnowledgeLoader.get_constituency_data()
-    
-    # Return all development projects for planning phase to filter later
-    existing_projects = KnowledgeLoader.get_development_projects()
+class ConstituencyContextAgent:
+    async def execute(self, state_dict: dict) -> dict:
+        """Constituency Intelligence Agent Task"""
+        logger.info("[Constituency Intelligence Agent] Gathering constituency intelligence...")
         
-    total_pop = c_data.get("population", 0)
-    estimated_impact = int(total_pop * 0.10)
-    
-    from app.models.schemas import ConstituencyIntelligence
-    constituency_intelligence = ConstituencyIntelligence(
-        constituency_name=c_data.get("constituency_name", ""),
-        population=total_pop,
-        villages=c_data.get("villages", 0),
-        schools=c_data.get("schools", 0),
-        hospitals=c_data.get("hospitals", 0),
-        phcs=c_data.get("phcs", 0),
-        road_network_km=c_data.get("road_length_km", 0.0),
-        water_supply_coverage=f"{c_data.get('water_supply_coverage_pct', 0)}%",
-        electricity_coverage=f"{c_data.get('electricity_coverage_pct', 0)}%",
-        historical_complaints=c_data.get("historical_complaints_ytd", 0),
-        infrastructure_gaps=c_data.get("infrastructure_gaps", []),
-        estimated_population_impacted=estimated_impact,
-        existing_development_projects=existing_projects
-    )
-    
-    return constituency_intelligence.model_dump()
+        profiles = KnowledgeLoader.get_constituency_profiles()
+        demographics = KnowledgeLoader.get_demographic_reference()
+        infrastructure = KnowledgeLoader.get_infrastructure_reference()
+        
+        from app.models.schemas import AgentState, ConstituencyIntelligence
+        state = AgentState(**state_dict)
+        intake = state.citizen_intelligence
+        
+        if not intake:
+            raise ValueError("ConstituencyContextAgent requires CitizenIntelligence in the state.")
+            
+        loc = intake.location.lower()
+        matched_profile = None
+        for p in profiles:
+            if p["district"].lower() in loc or p["state"].lower() in loc:
+                matched_profile = p
+                break
+                
+        if not matched_profile:
+            matched_profile = profiles[0]
+            
+        total_pop = matched_profile.get("population", 0)
+        estimated_impact = int(total_pop * 0.10)
+        
+        schemes = KnowledgeLoader.get_government_schemes()
+        
+        constituency_intelligence = ConstituencyIntelligence(
+            constituency_name=matched_profile.get("district", "Unknown District"),
+            population=total_pop,
+            villages=matched_profile.get("schools", 0) // 10,
+            schools=matched_profile.get("schools", 0),
+            hospitals=matched_profile.get("hospitals", 0),
+            phcs=infrastructure.get("hospitals", {}).get("phc", 0),
+            road_network_km=matched_profile.get("road_network_km", 0.0),
+            water_supply_coverage=f"{matched_profile.get('water_coverage_pct', 0)}%",
+            electricity_coverage=f"{infrastructure.get('electricity', {}).get('household_coverage_pct', 0)}%",
+            historical_complaints=total_pop // 1000,
+            infrastructure_gaps=["water", "roads", "healthcare"] if matched_profile.get("water_coverage_pct", 100) < 80 else ["education", "digital"],
+            estimated_population_impacted=estimated_impact,
+            existing_development_projects=schemes
+        )
+        
+        return constituency_intelligence.model_dump()

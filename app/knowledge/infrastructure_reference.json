@@ -1,0 +1,29 @@
+{
+  "roads": {
+    "national_highways_km": 10500,
+    "state_highways_km": 18000,
+    "rural_roads_km": 150000
+  },
+  "schools": {
+    "primary": 85000,
+    "secondary": 25000,
+    "higher_secondary": 10000
+  },
+  "hospitals": {
+    "chc": 800,
+    "phc": 2500,
+    "district_hospitals": 50
+  },
+  "water_supply": {
+    "piped_water_coverage_pct": 65,
+    "handpumps": 450000
+  },
+  "electricity": {
+    "electrified_villages_pct": 99,
+    "household_coverage_pct": 96
+  },
+  "internet": {
+    "broadband_penetration_pct": 42,
+    "mobile_coverage_pct": 88
+  }
+}
